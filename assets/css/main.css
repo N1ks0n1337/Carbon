@@ -1254,6 +1254,12 @@ td svg path:hover {
   color: #333333;
   padding-left: 10px;
 }
+@media(max-width: 425px){
+  .metrics-block{
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+}
 .dropdown .option{
   position: absolute;
   top: 40px;
@@ -1330,4 +1336,7 @@ td svg path:hover {
   overflow: auto;
   scrollbar-color: #5ba138 #fff;
   scrollbar-width: thin;
+}
+@media(max-width: 425px){
+
 }
