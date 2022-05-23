@@ -358,16 +358,17 @@ document.addEventListener('DOMContentLoaded', () => {
           align: 'left',
         },
         tooltip: {
-            backgroundColor: '#FFFFFF',
-            borderColor: '#fff',
-            borderRadius: 5,
-            style: {
-                color: '#333333',
-            },
-            formatter() {
-                return `<br/>
-                <strong>${this.y}k<strong/>`
-            }
+          borderWidth: 0,
+          backgroundColor: 'none',
+          shadow: false,
+          align: 'right',
+          pointFormat: '<span style="font-size:2em; color: #333333; font-weight: bold">{point.y}</span>',
+          positioner: function (labelWidth) {
+            return {
+              x: (this.chart.chartWidth - labelWidth) / 2,
+              y: (this.chart.plotHeight / 2) + 15
+            };
+          }
         },
         accessibility: {
           point: {
@@ -385,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
         credits: {
-            text: 't. CO2eq.',
+            tevalueSuffix: '%',xt: 't. CO2eq.',
             color: '#AFB1C2',
             position: {
                 x: -22,
@@ -401,27 +402,27 @@ document.addEventListener('DOMContentLoaded', () => {
           colorByPoint: true,
           data: [{
             name: 'CO2 (Carbon dioxide)',
-            y: 41.41,
+            y: 41.412,
             color: '#46BCC2',
           }, {
             name: 'CH4 (Methan)',
-            y: 20.84,
+            y: 20.841,
             color: '#9ACC35'
           }, {
             name: '(HFCs) Hydrofluorocarbons',
-            y: 14.85,
+            y: 14.855,
             color: '#FF974A'
           }, {
             name: 'N2O (Nitrous oxide)',
-            y: 10.67,
+            y: 10.673,
             color: '#DF5D60'
           }, {
             name: 'NF3 (Nitrogen trifluoride)',
-            y: 10.18,
+            y: 10.182,
             color: '#F3A1E1'
           }, {
             name: 'SF6 (Sulfur hexafluoride)',
-            y: 7.05,
+            y: 7.051,
             color: '#B55DDF'
           }]
         }]

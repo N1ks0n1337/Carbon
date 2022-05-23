@@ -1322,3 +1322,12 @@ td svg path:hover {
 .highcharts-grid-line { 
   stroke-dasharray: 5;
 }
+.tingle-modal_custom {
+  background: transparent;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  max-height: 100vh;
+  overflow: auto;
+  scrollbar-color: #5ba138 #fff;
+  scrollbar-width: thin;
+}
