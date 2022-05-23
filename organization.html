@@ -32,14 +32,18 @@
                     <nav class="navbar__aside">
                         <ul class="menu__items">
                             <div class="line"></div>
-                            <a href="./organization.html">
-                                <li class="menu__item active"><svg class="svg__icon  svg__active" width="13" height="13" viewBox="0 0 13 13"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M7.75 2.75V1.5H5.25V2.75H7.75ZM1.5 4V10.875H11.5V4H1.5ZM11.5 2.75C12.1938 2.75 12.75 3.30625 12.75 4V10.875C12.75 11.5688 12.1938 12.125 11.5 12.125H1.5C0.80625 12.125 0.25 11.5688 0.25 10.875L0.25625 4C0.25625 3.30625 0.80625 2.75 1.5 2.75H4V1.5C4 0.80625 4.55625 0.25 5.25 0.25H7.75C8.44375 0.25 9 0.80625 9 1.5V2.75H11.5Z" />
-                                </svg>
-                                Admin panel</li>
-                            </a>
+                            <div class="menu-link-block">
+                                <a class="link" href="./index.html">
+                                    <li class="menu__item active"><svg class="svg__icon svg__active" width="13" height="13"
+                                        viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.875 0.875H2.125C1.4375 0.875 0.875 1.4375 0.875 2.125V10.875C0.875 11.5625 1.4375 12.125 2.125 12.125H10.875C11.5625 12.125 12.125 11.5625 12.125 10.875V2.125C12.125 1.4375 11.5625 0.875 10.875 0.875ZM10.875 10.875H2.125V8.0125L2.74375 8.63125L5.24375 6.13125L7.74375 8.63125L10.2437 6.1375L10.875 6.76875V10.875ZM10.875 4.99375L10.2437 4.3625L7.74375 6.86875L5.24375 4.36875L2.74375 6.86875L2.125 6.24375V2.125H10.875V4.99375Z" />
+                                    </svg>
+                                    Admin
+                                </li>
+                                </a>
+                                <div class="rectangle"></div>
+                            </div>
                             <div class="line"></div>
                             <a href="">
                                 <li class="menu__item"><svg class="svg__icon" width="11" height="13" viewBox="0 0 11 13"
@@ -50,7 +54,7 @@
                                 Data inputs</li>
                             </a>
                             <div class="line"></div>
-                            <a href="./dashboard.html">
+                            <a href="./index.html">
                                 <li class="menu__item"><svg class="svg__icon" width="13" height="13"
                                     viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -87,7 +91,22 @@
                                         <ul class="header-menu-items">
                                             <li class="header-menu-item header-item-active">Organizations</li>
                                             <li class="header-menu-item">Sources of emissions</li>
-                                            <li class="header-menu-item">References</li>
+                                            <li class="header-menu-item">
+                                                <div class="main-nav__link main-nav__link_container active">
+                                                    <div class="dropdown dropdown_mnu js-dropdown">
+                                                      <button class="dropdown__label">
+                                                        <div class="dropdown__txt">Справочники</div>
+                                                      </button>
+                                                      <div class="dropdown__dropdown"> 
+                                                        <ul class="dropdown__list">
+                                                          <li class="dropdown__itm"> <a class="dropdown__link" href="okved.html">ОКВЕД</a></li>
+                                                          <li class="dropdown__itm"> <a class="dropdown__link active" href="fuel.html">Топливо и выбросы</a></li>
+                                                          <li class="dropdown__itm"> <a class="dropdown__link" href="formulas.html">Формулы</a></li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>

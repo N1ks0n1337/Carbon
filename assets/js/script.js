@@ -431,7 +431,6 @@ document.addEventListener('DOMContentLoaded', () =>{
   Highcharts.chart('actual', {
     chart: {
       renderTo: 'actual',
-      type: 'column'
     },
     credits: {
         text: 't. CO2eq.',
@@ -476,21 +475,24 @@ document.addEventListener('DOMContentLoaded', () =>{
       opposite: false,
     }],
     series: [{
-      type: 'pareto',
+      type: 'spline',
       name: 'Targets',
-      yAxis: 0,
-      zIndex: 10,
-      baseSeries: 1,
+      data: [250.2, 200.6, 230.7, 150, 40, 50, 50],
+      marker: {
+        lineWidth: 2,
+        lineColor: '#46BCC2',
+        fillColor: 'white'
+      },
       tooltip: {
         valueDecimals: 3,
         valueSuffix: ''
-      }
+      } 
     }, {
       name: 'Emissions',
       type: 'column',
       zIndex: 2,
       color: '#9ACC35',
-      data: [200, 150, 150, 86, 10, 10, 10],
+      data: [200.2, 150.6, 150.9, 86.1, 10.2, 10.8, 10.7],
       tooltip: {
         valueDecimals: 3,
         valueSuffix: ''

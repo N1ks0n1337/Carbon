@@ -174,7 +174,7 @@ body {
   display: none;
   position: relative;
   z-index: 10;
-  margin: 5px 0 0 auto;
+  margin: 0px 0 0 auto;
 }
 
 @media (max-width: 1279px) {
@@ -183,11 +183,7 @@ body {
   }
 }
 
-@media (max-width: 767px) {
-  .nav-group__burger {
-    margin: 5px 0 0 0;
-  }
-}
+
 
 .section {
   padding: 0 30px 30px;
@@ -233,6 +229,12 @@ body {
   padding: 30px 30px 20px;
   background-color: #F4F6FA;
   position: relative;
+  align-items: center;
+}
+@media(max-width: 779px){
+  .user-container{
+    display: none;
+  }
 }
 
 @media (max-width: 1279px) {
@@ -417,14 +419,19 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 46px;
-  background: #9ACC35;
-  border-radius: 0 20px 20px 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
   position: absolute;
   left: 100%;
-  top: 50%;
+  top: 25px;
   transform: translateY(-50%);
+}
+.btn{
+  display: flex;
+  background: #fff;
+  border: none;
 }
 
 @media (max-width: 991px) {
@@ -438,7 +445,7 @@ body {
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 5px;
     bottom: 0;
     transform: translateX(-100%);
     transition: all 0.3s linear;
@@ -706,7 +713,6 @@ a {
 }
 
 .profile {
-  margin-top: -20px;
   display: flex;
   margin-right: 25px;
 }
@@ -759,6 +765,16 @@ a {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+}
+.menu-link-block{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rectangle{
+  width: 3px;
+	height: 15px;
+	background: #9ACC35;
 }
 
 @media(max-width: 834px) {
@@ -851,7 +867,10 @@ a {
   height: 100vh;
 }
 
-.logo__register {}
+.logotype {
+  width: 80px;
+height: 72px;
+}
 
 .logo__container {
   display: flex;
@@ -904,7 +923,7 @@ a {
 .form__btn {
   width: 260px;
   height: 40px;
-  background: #9ACC35;
+  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
   border-radius: 5px;
   font-family: 'Museo Sans Cyrl';
   font-style: normal;
@@ -914,6 +933,12 @@ a {
   text-align: center;
   font-feature-settings: 'liga'off;
   color: #FFFFFF;
+  border: none;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+.form__btn:hover{
+  background: linear-gradient(90deg, #46BCC2 30%, #9ACC35 100%);
 }
 
 .metrics {
@@ -1288,4 +1313,12 @@ td svg path:hover {
 .dropdown.active::before{
   top: 16px;
   transform: rotate(-225deg);
+}
+@media(max-width: 1279px){
+  .profile-menu{
+    display: none;
+  }
+}
+.highcharts-grid-line { 
+  stroke-dasharray: 5;
 }
