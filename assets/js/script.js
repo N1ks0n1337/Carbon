@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         plotOptions: {
           pie: {innerSize: '80%',
-            allowPointSelect: true,
+            allowPointSelect: false,
             cursor: 'pointer',
             dataLabels: {
               enabled: false
