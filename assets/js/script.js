@@ -357,6 +357,18 @@ document.addEventListener('DOMContentLoaded', () => {
           text: 'Scope 1 GHG emissions, % ',
           align: 'left',
         },
+        credits: {
+          text: 't. CO2eq.',
+          color: '#AFB1C2',
+          position: {
+              x: -15,
+              y: -465,
+          },
+          style: {
+              color: '#AFB1C2',
+              fontSize: '13px',
+         }
+      },
         tooltip: {
           borderWidth: 0,
           backgroundColor: 'none',
@@ -375,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             valueSuffix: '%'
           }
         },
+        
         plotOptions: {
           pie: {innerSize: '80%',
             allowPointSelect: true,
@@ -384,18 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             showInLegend: true
           }
-        },
-        credits: {
-            tevalueSuffix: '%',xt: 't. CO2eq.',
-            color: '#AFB1C2',
-            position: {
-                x: -22,
-                y: -465
-            },
-            style: {
-                color: '#AFB1C2',
-                fontSize: '13px',
-           }
         },
         series: [{
           name: 'CO2',
