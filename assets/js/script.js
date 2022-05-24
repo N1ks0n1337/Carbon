@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         credits: {
             text: 't. CO2eq.',
             color: '#AFB1C2',
+            href: '',
             position: {
                 x: -15,
                 y: -260
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
           credits: {
             text: 't. CO2eq.',
             color: '#AFB1C2',
+            href: '',
             position: {
                 x: -22,
                 y: -420
@@ -152,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
               credits: {
                 text: 't. CO2eq.',
                 color: '#AFB1C2',
+                href: '',
                 position: {
                     x: -22,
                     y: -260
@@ -223,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           credits: {
             text: 't. CO2eq.',
             color: '#AFB1C2',
+            href: '',
             position: {
                 x: -22,
                 y: -240
@@ -292,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
           credits: {
             text: 't. CO2eq.',
             color: '#AFB1C2',
+            href: '',
             position: {
                 x: -22,
                 y: -240
@@ -344,8 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 
         ],
         
-    });
-    
+    });   
     Highcharts.chart('circle', {
         chart: {
           plotBackgroundColor: null,
@@ -360,17 +364,19 @@ document.addEventListener('DOMContentLoaded', () => {
         credits: {
           text: 't. CO2eq.',
           color: '#AFB1C2',
+          href: '',
           position: {
-              x: -15,
-              y: -465,
+              x: -22,
+              y: -460 
           },
           style: {
-              color: '#AFB1C2',
-              fontSize: '13px',
-         }
+            color: '#AFB1C2',
+            fontSize: '13px',
+       }
       },
         tooltip: {
-          borderWidth: 0,
+          animation: true,
+          borderWidth: 0,    
           backgroundColor: 'none',
           shadow: false,
           align: 'right',
@@ -392,11 +398,21 @@ document.addEventListener('DOMContentLoaded', () => {
           pie: {innerSize: '80%',
             allowPointSelect: false,
             cursor: 'pointer',
+            
             dataLabels: {
-              enabled: false
+              enabled: false,
             },
-            showInLegend: true
-          }
+            
+            showInLegend: {
+              enabled: true,
+            },
+            positioner: function (labelWidth) {
+              return {
+                x: (this.chart.chartWidth - labelWidth) / 2,
+                y: (this.chart.plotHeight / 2) + 15
+              };
+            }
+          },
         },
         series: [{
           name: 'CO2',
@@ -427,8 +443,10 @@ document.addEventListener('DOMContentLoaded', () => {
             color: '#B55DDF'
           }]
         }]
+        
       });
     });
+    
 document.addEventListener('DOMContentLoaded', () =>{
   Highcharts.chart('actual', {
     chart: {
@@ -437,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     credits: {
         text: 't. CO2eq.',
         color: '#AFB1C2',
+        href: '',
         position: {
             x: -22,
             y: -420
@@ -501,4 +520,4 @@ document.addEventListener('DOMContentLoaded', () =>{
       } 
     }]
   });
-})
+})  
