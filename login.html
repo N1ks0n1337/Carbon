@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="assets/css/libs.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <!--js-->
-    <script src="assets/js/libs.js" defer></script>
-    <script src="assets/js/app.js" defer></script>
     <!--[if lt IE 9]>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
 </head>
@@ -25,15 +23,16 @@
                 <img class="logotype" src="./assets/img/index/logoreg.png" alt="">
                 <h2 class="logo__title">Carbon<br />Tracker</h2>
             </div>
-            <form action="" class="form__items">
+            <form id="login" action="" class="form__items js-form">
                 <label for="email-input" class="form__title">Email</label>
-                <input id="email-input" type="email" class="form__input">
+                <input onchange="test()" id="email-input" class="form__input js-input js-input-email">
                 <label for="password-input" class="form__title">Password</label>
-                <input id="password-input" type="password" class="form__input">
-                <a href="./organization.html"><button class="form__btn">Login</button></a>
+                <input onchange="test()" id="password-input" type="password" class="form__input js-input js-input-password">
+                <button type="submit" class="form__btn">Login</button>
             </form>
         </div>
     </div>
+    <script src="assets/js/main.js" defer></script>
 
 </body>
 

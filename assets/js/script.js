@@ -355,12 +355,13 @@ document.addEventListener('DOMContentLoaded', () => {
           plotBackgroundColor: null,
           plotBorderWidth: null,
           plotShadow: false,
-          type: 'pie'
+          type: 'pie',
         },
         title: {
           text: 'Scope 1 GHG emissions, % ',
           align: 'left',
         },
+        
         credits: {
           text: 't. CO2eq.',
           color: '#AFB1C2',

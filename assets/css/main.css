@@ -112,6 +112,12 @@ body {
   z-index: 10;
 }
 
+@media(max-width: 476px){
+  ._main_nav{
+    margin-top: 50px;
+  }
+}
+
 @media (max-width: 575px) {
   .main-nav {
     padding-left: 0px;
@@ -868,8 +874,9 @@ a {
 }
 
 .logotype {
-  width: 80px;
-height: 72px;
+  width: 58px;
+  height: 51px;
+  margin-top: 10px;
 }
 
 .logo__container {
@@ -919,14 +926,18 @@ height: 72px;
   font-feature-settings: 'liga'off;
   color: #333333;
 }
+.form__input.error{
+  border: 1px solid #FF5256;
+  color:#FF5256;
+}
 
 .form__btn {
   width: 260px;
   height: 40px;
-  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
   border-radius: 5px;
   font-family: 'Museo Sans Cyrl';
   font-style: normal;
+  background: #D2D2DA;
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
@@ -936,6 +947,9 @@ height: 72px;
   border: none;
   transition: all 1s ease;
   cursor: pointer;
+}
+.form__btn.active-btn{
+  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
 }
 .form__btn:hover{
   background: linear-gradient(90deg, #46BCC2 30%, #9ACC35 100%);
@@ -1061,6 +1075,22 @@ height: 72px;
   max-width: 393px;
   color: #333333;
 }
+@media(max-width: 452px){
+  .block__content-title{
+    text-align: center;
+  }
+  ._nav{
+    margin-top: 50px;
+    padding: 10px;
+  }
+  .block__content{
+    padding: 20px;
+    margin-right: 1px;
+  }
+  .block__content-btn{
+    margin-top: 20px;
+  }
+}
 
 .block__content-btn {
   margin-left: 85px;
@@ -1073,7 +1103,11 @@ height: 72px;
   text-decoration: none;
   background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
   border-radius: 5px;
+  cursor: pointer;
+  transition: 1s all;
 }
+.block__content-btn:hover {
+  background: linear-gradient(90deg, #50D3DA 0%, #A9E038 100%);}
 
 @media (max-width:480px) {
   .block__content-btn {
@@ -1336,6 +1370,131 @@ td svg path:hover {
   scrollbar-color: #5ba138 #fff;
   scrollbar-width: thin;
 }
-@media(max-width: 425px){
 
+.popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(175, 177, 194, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup:target{
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup__area{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup_body{
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup_content{
+  background-color: #fff;
+  color: #AFB1C2;
+  font-family: 'Museo Sans Cyrl';
+  max-width: 415px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(203, 205, 220, 0.5);
+    overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+  opacity: 1;
+}
+.popup:target .popup__content{
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.popup__title{
+  font-family: 'Museo Sans Cyrl';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #333333;
+}
+.popup__close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.popup-menu{
+  margin-top: 25px;
+  display: flex;
+  width: 140px;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background: #F4F6FA;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #333333;
+}
+.popup-menu-item{
+  padding: 5px;
+  cursor: pointer;
+}
+.popup-item-active{
+  background: #9ACC35;
+  color: #FFFFFF;
+  padding: 11px;
+  border-radius: 5px;
+}
+
+.popup-form-input{
+  background: #FFFFFF;
+border: 1px solid #E5E5ED;
+border-radius: 5px;
+max-width: 375px;
+height: 40px;
+width: 100%;
+margin-top: 9px;
+padding: 11px;
+font-size: 13px;
+font-family: 'Museo Sans Cyrl';
+
+}
+.popup-form-input:placeholder-shown{
+  color: #AFB1C2;}
+.form-item{
+  position: relative;
+  margin-top: 20px;
+}
+.popup__star{
+  color: #FF5256;
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+}
+._select-popup{
+  margin-bottom: 40px;
+}
+.form-btn-popup{
+  margin-top: 20px;
+  width: 100%;
+}
+._drop-popup{
+  margin-top: 9px;
+}
+.tabs__block{
+  display: block;
 }
