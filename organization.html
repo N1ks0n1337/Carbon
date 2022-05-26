@@ -14,6 +14,12 @@
     <!--js-->
     <script src="assets/js/libs.js" defer></script>
     <script src="assets/js/app.js" defer></script>
+    <!-- Always get the latest version -->
+<!-- Not recommended for production sites! -->
+<link rel="stylesheet" type="text/css" href="./assets/css/tabby-ui.css">
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby/dist/js/tabby.polyfills.min.js"></script>
+
+
     <!--[if lt IE 9]>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
 </head>
@@ -45,7 +51,7 @@
                                 <div class="rectangle"></div>
                             </div>
                             <div class="line"></div>
-                            <a href="./login.html">
+                            <a href="./datainput.html">
                                 <li class="menu__item"><svg class="svg__icon" width="11" height="13" viewBox="0 0 11 13"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -63,7 +69,7 @@
                                 Dashboard</li>
                             </a>
                             <div class="line"></div>
-                            <a href="">
+                            <a href="./login.html">
                                 <li class="menu__item"><svg class="svg__icon" width="13" height="15" viewBox="0 0 13 15"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -89,10 +95,10 @@
                                 <nav class="main-nav _main_nav">
                                     <div class="header__navbar header-menu">
                                         <ul class="header-menu-items">
-                                            <li class="header-menu-item header-item-active">Organizations</li>
-                                            <li class="header-menu-item">Sources of emissions</li>
+                                            <li class="header-menu-item header-item-active"><a href="./organization.html">Organizations</a></li>
+                                            <li class="header-menu-item"><a href="./emission.html">Sources of emissions</a></li>
                                             <li class="header-menu-item">
-                                                References 
+                                               <a href="./datainputscope.html">References</a>  
                                             </li>
                                         </ul>
                                     </div>
@@ -126,7 +132,8 @@
                     </div>
                 </div>
                 <div class="block__container">
-                    <div class="block__title">Organizations</div>
+                    <div class="block__title">Organization Profile
+                        </div>
                     <div class="block__content">
                         <div class="block__content-img"><img src="./assets/img/organizations/organizationsicn.svg" alt=""></div>
                         <div class="block__content-title">Unfortunately, you have not added any organization yet. Let's start?</div>
@@ -142,63 +149,122 @@
             <div class="popup_content">
                 <a href="#" class="popup__close"><img src="./assets/img/organizations/closePopup.png" alt=""></a>
                 <div class="popup__title">Organization Profile</div>
-                <div class="popup-menu">
-                    <a href="#tab_01" class="popup-menu-item popup-item-active">Main</a>
-                    <a href="#tab_02"class="popup-menu-item ">Operators</a>
+                <ul data-tabs>
+                    <li><a data-tabby-default href="#Main">Main</a></li>
+                    <li><a href="#Operators">Operators</a></li>
+                </ul>
+                
+                <div id="Main"><div class="tabs__block">
+                    <form id="login" action="" class="form__items js-form">
+                        <div class="form-item">
+                            <div class="popup__star">*</div>
+                            <label for="email-input" class="form__title">Organization Name</label>
+                            <input placeholder="Organization Name" onchange="test()" id="email-input" class="popup-form-input js-input">
+                        </div>
+                        <div class="form-item _select-popup">
+                            <div class="popup__star">*</div>
+                            <label for="email-input" class="form__title">Organization Name</label>
+                            <div class="dropdown _drop-popup">
+                                <input type="text" class="textBox js-input" placeholder="Country" readonly>
+                                <div class="option">
+                                  <div onclick="show('Germany')">Germany</div>
+                                  <div onclick="show('United Kingdom...')">United Kingdom</div>
+                                  <div onclick="show('Russian')">Russian</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="popup__star">*</div>
+                            <label for="password-input" class="form__title">State/Province/Region</label>
+                            <input placeholder="State/Province/Region" onchange="test()" id="password-input" class="popup-form-input js-input">
+                        </div>
+                        <div class="form-item">
+                            <div class="popup__star">*</div>
+                            <label for="password-input" class="form__title">City</label>
+                            <input placeholder="City" onchange="test()" id="password-input" class="popup-form-input js-input">
+                        </div>
+                        <div class="form-item">
+                            <div class="popup__star">*</div>
+                            <label for="password-input" class="form__title">Post Code</label>
+                            <input placeholder="Post Code" onchange="test()" id="password-input" class="popup-form-input js-input">
+                        </div>
+                        <div class="form-item">
+                            <div class="popup__star">*</div>
+                            <label for="password-input" class="form__title">Street, Number</label>
+                            <input placeholder="Street, Number" onchange="test()" id="password-input" class="popup-form-input js-input">
+                        </div>
+                        <div class="form-item">
+                            <label for="password-input" class="form__title popup-label">Emissions Trading Permit Number</label>
+                            <input placeholder="Emissions Trading Permit Number" onchange="test()" id="password-input" class="popup-form-input">
+                        </div>
+                        <button type="submit" class="form__btn form-btn-popup">Save</button>
+                    </form>
+                </div></div>
+                <div id="Operators">
+                    <a class="add-btn" href="">+ Add</a>
+                    <table class="oper-table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Edit</th>
+                        </tr>
+                        <tr>
+                            <td>STEEL JOINT STOCK COMPANY </td>
+                            <td> <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.875 9.78125V12.125H3.21875L10.1312 5.2125L7.7875 2.86875L0.875 9.78125ZM2.7 10.875H2.125V10.3L7.7875 4.6375L8.3625 5.2125L2.7 10.875ZM11.9437 2.51875L10.4813 1.05625C10.3563 0.93125 10.2 0.875 10.0375 0.875C9.875 0.875 9.71875 0.9375 9.6 1.05625L8.45625 2.2L10.8 4.54375L11.9437 3.4C12.1875 3.15625 12.1875 2.7625 11.9437 2.51875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.75 10.875C0.75 11.5625 1.3125 12.125 2 12.125H7C7.6875 12.125 8.25 11.5625 8.25 10.875V3.375H0.75V10.875ZM2 4.625H7V10.875H2V4.625ZM6.6875 1.5L6.0625 0.875H2.9375L2.3125 1.5H0.125V2.75H8.875V1.5H6.6875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STEEL JOINT STOCK COMPANY </td>
+                            <td> <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.875 9.78125V12.125H3.21875L10.1312 5.2125L7.7875 2.86875L0.875 9.78125ZM2.7 10.875H2.125V10.3L7.7875 4.6375L8.3625 5.2125L2.7 10.875ZM11.9437 2.51875L10.4813 1.05625C10.3563 0.93125 10.2 0.875 10.0375 0.875C9.875 0.875 9.71875 0.9375 9.6 1.05625L8.45625 2.2L10.8 4.54375L11.9437 3.4C12.1875 3.15625 12.1875 2.7625 11.9437 2.51875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.75 10.875C0.75 11.5625 1.3125 12.125 2 12.125H7C7.6875 12.125 8.25 11.5625 8.25 10.875V3.375H0.75V10.875ZM2 4.625H7V10.875H2V4.625ZM6.6875 1.5L6.0625 0.875H2.9375L2.3125 1.5H0.125V2.75H8.875V1.5H6.6875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STEEL JOINT STOCK COMPANY </td>
+                            <td> <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.875 9.78125V12.125H3.21875L10.1312 5.2125L7.7875 2.86875L0.875 9.78125ZM2.7 10.875H2.125V10.3L7.7875 4.6375L8.3625 5.2125L2.7 10.875ZM11.9437 2.51875L10.4813 1.05625C10.3563 0.93125 10.2 0.875 10.0375 0.875C9.875 0.875 9.71875 0.9375 9.6 1.05625L8.45625 2.2L10.8 4.54375L11.9437 3.4C12.1875 3.15625 12.1875 2.7625 11.9437 2.51875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.75 10.875C0.75 11.5625 1.3125 12.125 2 12.125H7C7.6875 12.125 8.25 11.5625 8.25 10.875V3.375H0.75V10.875ZM2 4.625H7V10.875H2V4.625ZM6.6875 1.5L6.0625 0.875H2.9375L2.3125 1.5H0.125V2.75H8.875V1.5H6.6875Z"
+                                    fill="#AFB1C2" />
+                            </svg>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="tabs__body">
-                    <div id="tab_01" class="tabs__block">
-                        <form id="login" action="" class="form__items js-form">
-                            <div class="form-item">
-                                <div class="popup__star">*</div>
-                                <label for="email-input" class="form__title">Organization Name</label>
-                                <input placeholder="Organization Name" onchange="test()" id="email-input" class="popup-form-input js-input">
-                            </div>
-                            <div class="form-item _select-popup">
-                                <div class="popup__star">*</div>
-                                <label for="email-input" class="form__title">Organization Name</label>
-                                <div class="dropdown _drop-popup">
-                                    <input type="text" class="textBox js-input" placeholder="Country" readonly>
-                                    <div class="option">
-                                      <div onclick="show('Germany')">Germany</div>
-                                      <div onclick="show('United Kingdom...')">United Kingdom</div>
-                                      <div onclick="show('Russian')">Russian</div>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="form-item">
-                                <div class="popup__star">*</div>
-                                <label for="password-input" class="form__title">State/Province/Region</label>
-                                <input placeholder="State/Province/Region" onchange="test()" id="password-input" class="popup-form-input js-input">
-                            </div>
-                            <div class="form-item">
-                                <div class="popup__star">*</div>
-                                <label for="password-input" class="form__title">City</label>
-                                <input placeholder="City" onchange="test()" id="password-input" class="popup-form-input js-input">
-                            </div>
-                            <div class="form-item">
-                                <div class="popup__star">*</div>
-                                <label for="password-input" class="form__title">Post Code</label>
-                                <input placeholder="Post Code" onchange="test()" id="password-input" class="popup-form-input js-input">
-                            </div>
-                            <div class="form-item">
-                                <div class="popup__star">*</div>
-                                <label for="password-input" class="form__title">Street, Number</label>
-                                <input placeholder="Street, Number" onchange="test()" id="password-input" class="popup-form-input js-input">
-                            </div>
-                            <div class="form-item">
-                                <label for="password-input" class="form__title popup-label">Emissions Trading Permit Number</label>
-                                <input placeholder="Emissions Trading Permit Number" onchange="test()" id="password-input" class="popup-form-input js-input">
-                            </div>
-                            <button type="submit" class="form__btn form-btn-popup">Save</button>
-                        </form>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
+    
     <script src="assets/js/main.js" defer></script>
+    <script>
+        var tabs = new Tabby('[data-tabs]');
+    </script>
     <script>
         function show(anything){
           document.querySelector('.textBox').value = 

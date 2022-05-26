@@ -4,7 +4,7 @@
      inputEmail = document.querySelector('.js-input-email'),
      inputPassword = document.querySelector('.js-input-password');
      formBtn = document.querySelector('.form__btn');
-
+     
 
 
  function validateEmail(email) {
