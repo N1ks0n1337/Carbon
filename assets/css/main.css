@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
 }
@@ -106,7 +112,7 @@ body {
 }
 
 .main-nav {
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #fff;
   position: relative;
   z-index: 10;
@@ -634,7 +640,7 @@ ul li {
   display: flex;
   margin-top: 41px;
   flex-direction: column;
-
+  padding-left: 20%;
 }
 
 .menu__item {
@@ -668,10 +674,10 @@ ul li {
   fill: #9ACC35;
 }
 
-.header-menu-items {
+.header--items {
   display: flex;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 200px;
   width: 410px;
   height: 40px;
   display: flex;
@@ -681,6 +687,11 @@ ul li {
   font-size: 15px;
   color: #333333;
   font-weight: 400;
+}
+
+.header-menu-items {
+  display: flex;
+  position: relative;
 }
 
 @media(max-width: 1279px) {
@@ -702,6 +713,7 @@ ul li {
 .header-menu-item {
   padding: 5px;
   cursor: pointer;
+  margin: auto 0;
 }
 
 a {
@@ -781,10 +793,13 @@ a {
   justify-content: space-between;
 }
 
-.rectangle {
+.menu-link-block::after {
+  content: "";
   width: 3px;
   height: 15px;
   background: #9ACC35;
+  left: 0;
+  top: 0;
 }
 
 @media(max-width: 834px) {
@@ -803,7 +818,9 @@ a {
   }
 }
 
-.dashboard-title {
+.dashboard-title {}
+
+.pages-title {
   font-weight: 600;
   font-size: 22px;
   line-height: 26px;
@@ -811,7 +828,7 @@ a {
 }
 
 @media(max-width: 892px) {
-  .dashboard-title {
+  .pages-title {
     text-align: center;
   }
 }
@@ -956,6 +973,52 @@ a {
 }
 
 .form__btn.active-btn {
+  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
+}
+
+.form__btn-operators {
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: 'Museo Sans Cyrl';
+  font-style: normal;
+  background: #D2D2DA;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  font-feature-settings: 'liga'off;
+  color: #FFFFFF;
+  border: none;
+  transition: all 1s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.form__btn-operators.active-btn {
+  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
+}
+
+.form__btn-add {
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: 'Museo Sans Cyrl';
+  font-style: normal;
+  background: #D2D2DA;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  font-feature-settings: 'liga'off;
+  color: #FFFFFF;
+  border: none;
+  transition: all 1s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.form__btn-add.active-btn {
   background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
 }
 
@@ -1406,6 +1469,7 @@ td svg path:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(175, 177, 194, 0.5);
+  backdrop-filter: blur(4px);
   top: 0;
   left: 0;
   z-index: 99999;
@@ -1414,7 +1478,71 @@ td svg path:hover {
   transition: all 0.8s ease 0s;
 }
 
+.popup__delete {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(175, 177, 194, 0.5);
+  backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup__add {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(175, 177, 194, 0.5);
+  backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup_content__delete {
+  width: 415px;
+  background-color: #fff;
+  color: #AFB1C2;
+  font-family: 'Museo Sans Cyrl';
+  max-width: 415px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(203, 205, 220, 0.5);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+  opacity: 1;
+}
+
+@media(max-width: 420px) {
+  .popup_content__delete {
+    width: 100%;
+  }
+}
+
 .popup:target {
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup__delete:target {
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup__add:target {
   opacity: 1;
   visibility: visible;
   overflow-y: auto;
@@ -1430,9 +1558,7 @@ td svg path:hover {
 }
 
 .popup_body {
-  min-height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 30px 10px;
 }
@@ -1536,8 +1662,7 @@ td svg path:hover {
   width: 100%;
 }
 
-._drop-popup {
-}
+._drop-popup {}
 
 .tabs__block {
   display: block;
@@ -1639,16 +1764,19 @@ td svg path:hover {
   cursor: pointer;
   font-size: 15px;
 }
+
 @media (max-width:405px) {
-  .item-5{
+  .item-5 {
     display: none;
   }
 }
+
 @media (max-width:360px) {
-  .item-4{
+  .item-4 {
     display: none;
   }
 }
+
 .pages-item:focus {
   background: #E5E5ED;
   color: #333333;
@@ -1740,6 +1868,7 @@ td svg path:hover {
   top: 15px;
   left: 80px;
 }
+
 .pages-dropdown-text {
   font-family: 'Museo Sans Cyrl';
   font-style: normal;
@@ -1751,6 +1880,7 @@ td svg path:hover {
   color: #AFB1C2;
   margin-right: 103px;
 }
+
 .scope-title {
   color: #333333;
   font-size: 22px;
@@ -1808,22 +1938,26 @@ td svg path:hover {
   position: absolute;
   top: 45px;
 }
+
 .table__container {
   margin-top: 50px;
   padding-right: 39px;
   overflow-x: auto;
 }
+
 table.table-1 {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
+
 .dc {
   position: relative;
   display: flex;
   justify-content: space-between;
   padding-top: 25px;
 }
+
 @media(max-width: 563px) {
   .scope-item-title {
     font-size: 13px;
@@ -1912,7 +2046,7 @@ table.table-1 {
   display: none;
 }
 
-.oper-table{
+.oper-table {
   margin: 0 auto;
   margin-top: 20px;
   justify-self: center;
@@ -1924,13 +2058,16 @@ table.table-1 {
   border: 1px solid #E5E5ED;
   border-radius: 5px;
 }
-.oper-table tr{
+
+.oper-table tr {
   border: 1px solid #E5E5ED;
 }
-.oper-table tr:hover{
+
+.oper-table tr:hover {
   background: #F4F6FA;
 }
-.oper-table th{
+
+.oper-table th {
   align-items: start;
   text-align: left;
   font-family: 'Museo Sans Cyrl';
@@ -1945,7 +2082,8 @@ table.table-1 {
 
   padding: 10px;
 }
-.oper-table td{
+
+.oper-table td {
   font-family: 'Museo Sans Cyrl';
   font-style: normal;
   font-weight: 600;
@@ -1956,4 +2094,204 @@ table.table-1 {
   color: #333333;
   border: 1px solid #E5E5ED;
   padding: 10px;
+}
+
+#error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.popup-input-add {
+  width: 375px;
+}
+
+@media(max-width: 380px) {
+  .popup-input-add {
+    width: 100%;
+  }
+}
+
+.delete-btn {
+  z-index: 99999;
+  display: flex;
+  width: 61px;
+  height: 40px;
+  background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+
+  .checkbox-container{
+    display: flex;
+    gap: 20px;
+    
+  }
+  input[type=checkbox],
+  input[type=radio] {
+    --active: #F4F6FA;
+    --active-border:#AFB1C2;
+    --active-inner: #333;
+    --focus: 1px  transparent;
+    --border: #E5E5ED;
+    --border-hover: #AFB1C2;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background .3s, border-color .3s, box-shadow .2s;
+  }
+
+  input[type=checkbox]:after,
+  input[type=radio]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+  }
+
+  input[type=checkbox]:checked,
+  input[type=radio]:checked {
+    --b: var(--active);
+    --bc: var(--active-border);
+    --d-o: .3s;
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1.2)
+  }
+
+  input[type=checkbox]:disabled,
+  input[type=radio]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: .9
+  }
+
+  input[type=checkbox]:disabled:checked,
+  input[type=radio]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border)
+  }
+
+  input[type=checkbox]:disabled+label,
+  input[type=radio]:disabled+label {
+    cursor: not-allowed
+  }
+
+  input[type=checkbox]:hover:not(:checked):not(:disabled),
+  input[type=radio]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover)
+  }
+
+  input[type=checkbox]:focus,
+  input[type=radio]:focus {
+    box-shadow: 0 0 0 var(--focus)
+  }
+
+  input[type=checkbox]:not(.switch),
+  input[type=radio]:not(.switch) {
+    width: 21px
+  }
+
+  input[type=checkbox]:not(.switch):after,
+  input[type=radio]:not(.switch):after {
+    opacity: var(--o, 0)
+  }
+
+  input[type=checkbox]:not(.switch):checked,
+  input[type=radio]:not(.switch):checked {
+    --o: 1
+  }
+
+  input[type=checkbox]+label,
+  input[type=radio]+label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px
+  }
+
+  input[type=checkbox]:not(.switch) {
+    border-radius: 5px
+  }
+
+  input[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 3px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg))
+  }
+
+  input[type=checkbox]:not(.switch):checked {
+    --r: 43deg
+  }
+
+  input[type=checkbox].switch {
+    width: 38px;
+    border-radius: 11px
+  }
+
+  input[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0))
+  }
+
+  input[type=checkbox].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px
+  }
+
+  input[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: .6
+  }
+
+  input[type=radio] {
+    border-radius: 50%
+  }
+
+  input[type=radio]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7))
+  }
+
+  input[type=radio]:checked {
+    --s: .5
+  }
 }
