@@ -11,7 +11,6 @@
     <!-- styles-->
     <link rel="stylesheet" href="assets/css/libs.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/iconfont.css">
     <!--js-->
     <script src="assets/js/libs.js" defer></script>
     <script src="assets/js/app.js" defer></script>
@@ -26,54 +25,54 @@
                 <ul class="checkbox-container">
                     <li>
                         <input id="c1" type="checkbox">
-                        <label class="checkbox-label" for="c1">Checkbox</label>
+                        <label for="c1">Checkbox</label>
                     </li>
                     <li>
                         <input id="c2" type="checkbox" checked>
-                        <label class="checkbox-label" for="c2">Checkbox</label>
+                        <label for="c2">Checkbox</label>
                     </li>
                     <li>
                         <input id="r1" type="radio" name="radio" value="1">
-                        <label class="checkbox-label" for="r1">Radio</label>
+                        <label for="r1">Radio</label>
                     </li>
                     <li>
                         <input id="r2" type="radio" name="radio" value="2" checked>
-                        <label class="checkbox-label" for="r2">Radio</label>
+                        <label for="r2">Radio</label>
                     </li>
                     <li>
                         <input id="s1" type="checkbox" class="switch">
-                        <label class="checkbox-label" for="s1">Switch</label>
+                        <label for="s1">Switch</label>
                     </li>
                     <li>
                         <input id="s2" type="checkbox" class="switch" checked>
-                        <label class="checkbox-label" for="s2">Switch</label>
+                        <label for="s2">Switch</label>
                     </li>
                 </ul>
 
                 <ul class="checkbox-container">
                     <li>
                         <input id="c1d" type="checkbox" disabled>
-                        <label class="checkbox-label" for="c1d">Checkbox</label>
+                        <label for="c1d">Checkbox</label>
                     </li>
                     <li>
                         <input id="c2d" type="checkbox" checked disabled>
-                        <label class="checkbox-label" for="c2d">Checkbox</label>
+                        <label for="c2d">Checkbox</label>
                     </li>
                     <li>
                         <input id="r1d" type="radio" name="radiod" value="1" disabled>
-                        <label class="checkbox-label" for="r1d">Radio</label>
+                        <label for="r1d">Radio</label>
                     </li>
                     <li>
                         <input id="r2d" type="radio" name="radiod" value="2" checked disabled>
-                        <label class="checkbox-label" for="r2d">Radio</label>
+                        <label for="r2d">Radio</label>
                     </li>
                     <li>
                         <input id="s1d" type="checkbox" class="switch" disabled>
-                        <label class="checkbox-label" for="s1d">Switch</label>
+                        <label for="s1d">Switch</label>
                     </li>
                     <li>
                         <input id="s2d" type="checkbox" class="switch" checked disabled>
-                        <label class="checkbox-label" for="s2d">Switch</label>
+                        <label for="s2d">Switch</label>
                     </li>
                 </ul>
                 <div class="dc">
@@ -89,13 +88,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="search__box">
-                    <div class="search__container">
-                        <input type="search" id="search" placeholder="Search" /><div class="close"></div>
-                        <span class="icon"><i class="icon-loop"></i></span>
-                    </div>
-                </div>
             </main>
         </div>
     </div>
@@ -104,6 +96,7 @@
             document.querySelector('.textBox').value =
                 anything;
         }
+
         let dropdown = document.querySelector('.dropdown');
         dropdown.onclick = function () {
             dropdown.classList.toggle('active')
