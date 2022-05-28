@@ -636,6 +636,15 @@ ul li {
   opacity: 0.5;
 }
 
+.container__item::before {
+  content: "";
+  border: 1px solid #DCDDE8;
+  width: 168px;
+  height: 1px;
+  margin-left: -20px;
+  opacity: 0.5;
+}
+
 .navbar__aside {
   display: flex;
   margin-top: 41px;
@@ -653,11 +662,6 @@ ul li {
 
 .menu__item img {
   margin-right: 13px;
-}
-
-.menu__item:hover {
-  color: #333333;
-  transition: 0.6s ease;
 }
 
 .active {
@@ -1119,6 +1123,7 @@ a {
 }
 
 .block__container {
+  position: relative;
   margin-top: 35px;
   margin-left: 30px;
   max-width: 1123px;
@@ -1338,7 +1343,7 @@ td svg path:hover {
   width: 100%;
   height: 40px;
   cursor: pointer;
-  background: #Ffff;
+  background: #fff;
   border: 1px solid #DCDDE8;
   border-radius: 5px;
   font-family: 'Museo Sans Cyrl';
@@ -1430,9 +1435,9 @@ td svg path:hover {
   top: 14px;
   width: 8px;
   height: 8px;
-  border: 2px solid #333333;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border: 3px solid #333333;
+  border-top: 0px solid #fff;
+  border-right: 0px solid #fff;
   transform: rotate(-45deg);
   z-index: 9;
   transition: 0.5s;
@@ -1661,8 +1666,6 @@ td svg path:hover {
   margin-top: 20px;
   width: 100%;
 }
-
-._drop-popup {}
 
 .tabs__block {
   display: block;
@@ -2132,18 +2135,30 @@ table.table-1 {
 }
 
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-
-  .checkbox-container{
+  .checkbox-container {
     display: flex;
     gap: 20px;
-    
   }
+
+  .checkbox-container li {
+    display: flex;
+  }
+
+  .checkbox-label {
+    font-family: 'Museo Sans Cyrl';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #333333;
+  }
+
   input[type=checkbox],
   input[type=radio] {
     --active: #F4F6FA;
-    --active-border:#AFB1C2;
+    --active-border: #AFB1C2;
     --active-inner: #333;
-    --focus: 1px  transparent;
+    --focus: 1px transparent;
     --border: #E5E5ED;
     --border-hover: #AFB1C2;
     --background: #fff;
@@ -2294,4 +2309,90 @@ table.table-1 {
   input[type=radio]:checked {
     --s: .5
   }
+}
+
+.search__box {
+  margin-top: -13px;
+  margin-bottom: 20px;
+}
+
+input[type=search] {
+  border: none;
+  font-size: 10pt;
+  float: left;
+  background-color: transparent;
+  width: 90%;
+  color: #333333;
+
+}
+
+input[type=search]::placeholder {
+  color: #AFB1C2;
+}
+
+.search__container {
+  width: 320px;
+  height: 40px;
+  background: #F4F6FA;
+  border: 1px solid #E5E5ED;
+  border-radius: 5px;
+  padding-left: 11px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.search__container:hover {
+  background-color: #FFFFFF;
+}
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+} 
+
+input[type=search]:hover, input[type=search]:focus,input[type=search]:active{
+  outline: none;
+}
+.close{
+  position: absolute;
+  top: -2px;
+  right: 60px;
+  width: 9px;
+  height: 9px;
+  cursor: pointer;
+}
+.close:before,
+.close:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  width: 13px;
+  height: 2px;
+  background: #AFB1C2;
+}
+.close:hover::before,
+.close:hover::after{
+  background: #9ACC35;
+}
+.close:before {
+  webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close:after {
+  webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.block__container .add-btn{
+  top: 43px;
+  left: 100%;
+}
+.block__container table{
+  width: 106%;
+  text-align: left;
+}
+.block__container table td{
+  text-align: left;
 }
