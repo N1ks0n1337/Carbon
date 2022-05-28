@@ -9,9 +9,9 @@
     <meta name="format-detection" content="telephone=no">
     <link href="/favicon.png" rel="shortcut icon" type="image/png">
     <!-- styles-->
-    <link rel="stylesheet" href="assets/css/libs.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/iconfont.css">
+    <link rel="stylesheet" href="./assets/css/libs.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/iconfont.css">
     <!--js-->
     <script src="assets/js/app.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/tabby-ui.css">
@@ -39,23 +39,23 @@
                             <div class="menu-link-block">
                                 <a href="./organization.html">
                                     <li class="menu__item icon-adminpanel active">
-                                    Admin panel</li>
+                                        Admin panel</li>
                                 </a>
                             </div>
                             <div class="line"></div>
                             <a href="./datainput.html">
                                 <li class="menu__item icon-datainput">
-                                Data inputs</li>
+                                    Data inputs</li>
                             </a>
                             <div class="line"></div>
                             <a href="./index.html">
                                 <li class="menu__item icon-dashboard">
-                                Dashboard</li>
+                                    Dashboard</li>
                             </a>
                             <div class="line"></div>
                             <a href="./organizationcreate.html">
                                 <li class="menu__item icon-reports">
-                                Reports</li>
+                                    Reports</li>
                             </a>
                             <div class="line"></div>
                         </ul>
@@ -73,15 +73,52 @@
                         <div class="nav-group">
                             <div class="nav-group__mnu js-main-nav">
                                 <nav class="main-nav">
-                                    <div class="header__navbar header-menu">
-                                        <ul class="header-menu-items">
-                                            <li class="header-menu-item "><a
-                                                    href="./organization.html">Sources of organizations</a></li>
-                                            <li class="header-menu-item header-item-active"><a href="./emission.html">Sources of
-                                                    emissions</a></li>
-                                            <li class="header-menu-item">References</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="main-nav__list">
+                                        <li class="main-nav__itm"> <a class="main-nav__link"
+                                                href="./organization.html">Sources of organizations</a></li>
+                                        <li class="main-nav__itm"> <a class="main-nav__link active"
+                                                href="./emission.html">Sources of emissions</a></li>
+                                        <li class="main-nav__itm">
+                                            <div class="main-nav__link main-nav__link_container">
+                                                <div class="dropdown dropdown_mnu js-dropdown">
+                                                    <button class="dropdown__label">
+                                                        <div class="dropdown__txt">References</div>
+                                                    </button>
+                                                    <div class="dropdown__dropdown">
+                                                        <ul class="dropdown__list">
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Greenhouse gases</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Fuels</a></li>
+                                                            <li class="dropdown__itm"> <a class="dropdown__link">Fuel
+                                                                    types</a></li>
+                                                            <li class="dropdown__itm"> <a class="dropdown__link">Fuel
+                                                                    measurement units</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Productions</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Commodity nomenclature</a>
+                                                            </li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Relation products</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Materials</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Journal</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Quotas</a></li>
+                                                            <li class="dropdown__itm"> <a class="dropdown__link">Tier
+                                                                    methods</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Operators</a></li>
+                                                            <li class="dropdown__itm"> <a
+                                                                    class="dropdown__link">Countries</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </nav>
                             </div>
                             <div class="nav-group__burger">
@@ -94,10 +131,12 @@
                         <div class="user-container">
                             <div class="profile">
                                 <div class="profile-menu">
-                                    <a href="./checkboxes.html"><img src="./assets/img/dashboard/icon/menu.png" alt=""></a>
+                                    <a href="./checkboxes.html"><img src="./assets/img/dashboard/icon/menu.png"
+                                            alt=""></a>
                                 </div>
                                 <div class="profile-info">
-                                    <a href="./login.html"><img src="./assets/img/dashboard/icon/profile.png" alt=""></a>
+                                    <a href="./login.html"><img src="./assets/img/dashboard/icon/profile.png"
+                                            alt=""></a>
                                 </div>
                                 <div class="profile-descr">
                                     <div class="profile-descr-role">
