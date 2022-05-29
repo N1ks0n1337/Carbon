@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/iconfont.css">
     <!--js-->
-    <script src="assets/js/libs.js" defer></script>
-    <script src="assets/js/app.js" defer></script>
+    <script src="./assets/js/libs.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
     <!--[if lt IE 9]>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
 </head>
@@ -92,11 +92,26 @@
 
                 <div class="search__box">
                     <div class="search__container">
-                        <input type="search" id="search" placeholder="Search" /><div class="close"></div>
+                        <input type="search" id="search" placeholder="Search" />
+                        <div class="close"></div>
                         <span class="icon"><i class="icon-loop"></i></span>
                     </div>
                 </div>
             </main>
+            <div class="bar__select">
+                <div class="select">
+                    <div class="select__select">
+                        <label class="inpt">
+                            <select class="inpt__field inpt__field_select js-select" name="onPage">
+                                <option value="10">cdscsaasxdqsxqwdqxdwx </option>
+                                <option value="20">20 </option>
+                                <option value="50">50 </option>
+                                <option value="100">100 </option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -109,7 +124,7 @@
             dropdown.classList.toggle('active')
         }
     </script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 
 </html>

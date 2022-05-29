@@ -128,9 +128,6 @@
                     <div class="topline__rigth">
                         <div class="user-container">
                             <div class="profile">
-                                <div class="profile-menu">
-                                    <a href="./checkboxes.html"><img src="./assets/img/dashboard/icon/menu.png" alt=""></a>
-                                </div>
                                 <div class="profile-info">
                                     <a href="./login.html"><img src="./assets/img/dashboard/icon/profile.png" alt=""></a>
                                 </div>
@@ -147,11 +144,14 @@
                     </div>
                 </div>
                 <div class="block__container">
-                    <div class="block__title">Emission sources</div><a class="add-btn" >+ Add<a class="add-btn">+ Add</a></a>
-                    <div class="search__box">
+                    <div class="block__title">Emission sources</div>
+                    <div class="search__box box-container">
                         <div class="search__container">
                             <input type="search" id="search" placeholder="Search" /><div class="close"></div>
                             <span class="icon"><i class="icon-loop"></i></span>
+                        </div>
+                        <div class="add-btn-emissoins">
+                            <a href="" class="btn-emissions-add">+ Add</a>
                         </div>
                     </div>
                     <table>
@@ -224,7 +224,17 @@
             </main>
         </div>
     </div>
+    <script>
+        function show(anything) {
+            document.querySelector('.textBox').value =
+                anything;
+        }
 
+        let dropdown = document.querySelector('.dropdown');
+        dropdown.onclick = function () {
+            dropdown.classList.toggle('active')
+        }
+    </script>
 </body>
 
 </html>
