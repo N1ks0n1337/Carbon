@@ -2406,7 +2406,6 @@ input[type=search]::placeholder {
 }
 
 .search__container {
-  width: 320px;
   height: 40px;
   background: #F4F6FA;
   border: 1px solid #E5E5ED;
@@ -2416,6 +2415,9 @@ input[type=search]::placeholder {
   padding-bottom: 12px;
   vertical-align: middle;
   white-space: nowrap;
+  align-items: center;
+  display: flex;
+
   position: relative;
 }
 
@@ -3238,4 +3240,58 @@ input[type="search"]::-webkit-search-decoration {
         transform: translate(-50%, -50%) rotate(-45deg); }
       .pass-visiblity.active::before {
         display: none; }
-    
+
+        
+
+.select_wrap{
+  width: 410px;
+}
+._margin-class{
+  margin-bottom: 20px;
+}
+.inpt__icn_close {
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; }
+
+  .icon{
+    padding-top: 7.5px;
+  }
+  .textarea{
+    background: #FFFFFF;
+    border: 1px solid #E5E5ED;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    resize: none;
+    height: 100px;
+    margin-top: 9px;
+    padding: 11px;
+    font-size: 13px;
+    font-family: 'Museo Sans Cyrl';
+  }
+
+.label-input{
+  color: #AFB1C2;
+  font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+.input-field-error{
+  border: 1px solid #FF5256;
+  color: #FF5256; 
+}
+.inpt-label-block{
+  position: relative;
+}
+.required-field::after{
+  content: "*";
+  color: #FF5256;
+  font-size: 13px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}

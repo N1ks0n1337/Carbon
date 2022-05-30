@@ -160,9 +160,10 @@
                                 alt=""></div>
                         <div class="block__content-title">Unfortunately, you have not added any organization yet. Let's
                             start?</div>
-                        <button class="block__content-btn">
+                        <button class="block__content-btn" data-modal-content=".js-modal-oragnization-add">
                             Create Organization
                         </button>
+                        
                     </div>
                 </div>
             </main>
@@ -307,7 +308,7 @@
             </div>
         </div>
     </div>
-    <div id="popup__add" class="popup__add">
+    <div class="popup__add modal modal_sm js-modal-object-add">
         <a href="#" class="popup__area"></a>
         <div class="popup_body">
             <div class="popup_content">
@@ -359,17 +360,7 @@
     <script>
         var tabs = new Tabby('[data-tabs]');
     </script>
-    <script>
-        function show(anything) {
-            document.querySelector('.textBox').value =
-                anything;
-        }
 
-        let dropdown = document.querySelector('.dropdown');
-        dropdown.onclick = function () {
-            dropdown.classList.toggle('active')
-        }
-    </script>
     <script src="./assets/js/select.js"></script>
 </body>
 
