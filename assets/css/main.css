@@ -240,7 +240,7 @@ body {
 .topline {
   display: flex;
   justify-content: space-between;
-  padding: 50px 30px 0px;
+  padding: 60px 4px 0px 28px;
   background-color: #F4F6FA;
   position: relative;
   align-items: center;
@@ -774,11 +774,15 @@ a {
 .profile-info {
   margin-right: 10px;
 }
-
+._metrics-block{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 .dashboard-block {
   margin-top: 35px;
   margin-left: 30px;
   display: flex;
+  flex-direction: column;
   gap: 24px;
   flex-wrap: wrap;
 }
@@ -804,6 +808,11 @@ a {
   }
 }
 
+.pages-title-block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 @media(max-width: 834px) {
   .dashboard-block {
     margin-left: 0px;
@@ -820,8 +829,6 @@ a {
   font-weight: 600;
   font-size: 22px;
   line-height: 26px;
-  margin-left: 30px;
-  margin-top: 35px;
 }
 
 @media(max-width: 892px) {
@@ -1125,7 +1132,6 @@ a {
 .block__container {
   margin-top: 35px;
   margin-left: 30px;
-  max-width: 1123px;
   margin-right: 30px;
 }
 
@@ -1753,14 +1759,14 @@ text-align: start;
   margin-top: 14px;
 }
 
-.data-input-scope {
+.block-btn-left{
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.data-input-items {
+.block-btn {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1771,14 +1777,12 @@ text-align: start;
   margin-right: 27px;
 }
 
-.data-input-btn {
+.btn {
   padding: 11px 8px;
-  background: #FFFFFF;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 83px;
   height: 40px;
   font-size: 15px;
   transition: 0.3s all;
@@ -1786,15 +1790,24 @@ text-align: start;
   cursor: pointer;
   font-family: 'Museo Sans Cyrl';
 }
-
-.data-input-btn-active {
+.btn-default{
+  background: #FFFFFF;
+}
+.btn-primary{
   background: #9ACC35;
   color: #fff;
 }
 
-.data-input-right {
+.block-btn-right {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-right: 22px;
+}
+@media(max-width: 647px){
+  .block-btn-right {
+margin-top: 20px;
+  }
 }
 
 .data-input-btn-primary {
@@ -1813,8 +1826,10 @@ text-align: start;
   color: #333333;
   font-family: 'Museo Sans Cyrl';
 }
+.btn-default{
 
-.data-input-btn-primary img {
+}
+.btn-default img {
   margin-right: 5px;
 }
 
@@ -1854,7 +1869,7 @@ text-align: start;
   color: #333333;
 }
 
-.pages-item:hover {
+.pages-item-active {
   background: #9ACC35;
   color: #fff;
   transition: all 0.3s;
@@ -1912,7 +1927,7 @@ text-align: start;
   -webkit-transform: rotate(135deg);
 }
 
-.data-input-block {
+.submenu {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -2372,7 +2387,7 @@ table.table-1 {
 }
 
 .search__box {
-  margin-top: -13px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -2459,7 +2474,7 @@ input[type=search]:active {
 }
 
 .block__container table {
-  width: 106%;
+  width: 100%;
   text-align: left;
 }
 
@@ -2834,9 +2849,6 @@ form .field.error .error {
   justify-content: space-between;
 }
 
-.add-btn-emissoins {
-  margin-right: -67px;
-}
 
 @media(max-width: 1489px) {
   .add-btn-emissoins {
@@ -2844,7 +2856,7 @@ form .field.error .error {
   }
 }
 
-.btn-emissions-add {
+.btn-main {
   color: #fff;
   padding: 10px;
   background: linear-gradient(90deg, #46BCC2 0%, #9ACC35 100%);
