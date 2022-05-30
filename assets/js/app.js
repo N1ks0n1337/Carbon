@@ -19,20 +19,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }
   tooggleActive("js-burger");
-  const selected = document.querySelector(".selected");
-  const optionsContainer = document.querySelector(".options-container");
-  
-  const optionsList = document.querySelectorAll(".option");
-  
-  selected.addEventListener("click", () => {
-    optionsContainer.classList.toggle("active");
-  });
-  optionsList.forEach(o => {
-    o.addEventListener("click", () => {
-      selected.innerHTML = o.querySelector("label").innerHTML;
-      optionsContainer.classList.remove("active");
-    });
-  });
+
   function checkElementActive(selector) {
     return document.querySelector(selector).classList.contains("active");
   }
@@ -441,5 +428,630 @@ document.addEventListener("DOMContentLoaded", function (e) {
       },
     },
   });
-  
+
+  if (document.querySelector("#graph-1")) {
+    Highcharts.chart("graph-1", {
+      chart: {
+        type: "column",
+      },
+
+      title: {
+        text: "Объем производства железорудной продукции | млн тонн",
+      },
+
+      xAxis: {
+        title: {
+          text: null,
+        },
+        categories: ["2018", "2019", "2020"],
+      },
+
+      yAxis: {
+        title: {
+          text: null,
+        },
+        gridLineColor: "transparent",
+        labels: {
+          enabled: false,
+        },
+      },
+
+      tooltip: {
+        valueSuffix: " млн тонн",
+      },
+
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+          },
+        },
+      },
+
+      legend: {
+        enabled: true,
+        align: "left",
+        verticalAlign: "top",
+        borderWidth: 0,
+      },
+
+      series: [
+        {
+          name: "ГБЖ/ПВЖ",
+          data: [7.8, 7.9, 7.8],
+        },
+        {
+          name: "Окатыши",
+          data: [27.7, 28.1, 27.6],
+        },
+        {
+          name: "Железорудный концентрат",
+          data: [40.4, 40.2, 40.5],
+        },
+      ],
+    });
+  }
+
+  if (document.querySelector("#graph-6")) {
+    Highcharts.chart("graph-6", {
+      chart: {
+        type: "column",
+      },
+
+      title: {
+        text: "Объем производства металлургической продукции | млн тонн",
+      },
+
+      xAxis: {
+        title: {
+          text: null,
+        },
+        categories: ["2018", "2019", "2020"],
+      },
+
+      yAxis: {
+        title: {
+          text: null,
+        },
+        gridLineColor: "transparent",
+        labels: {
+          enabled: false,
+        },
+      },
+
+      tooltip: {
+        valueSuffix: " млн тонн",
+      },
+
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+          },
+        },
+      },
+
+      legend: {
+        enabled: true,
+        align: "left",
+        verticalAlign: "top",
+        borderWidth: 0,
+      },
+
+      series: [
+        {
+          name: "Сталь",
+          data: [1.6, 1.4, 1.5],
+        },
+        {
+          name: "Чугун",
+          data: [3.0, 2.7, 2.3],
+        },
+      ],
+    });
+  }
+
+  if (document.querySelector("#graph-2")) {
+    Highcharts.chart("graph-2", {
+      chart: {
+        type: "column",
+      },
+
+      title: {
+        text: null,
+      },
+
+      legend: { enabled: true },
+
+      yAxis: [
+        {
+          title: {
+            text: null,
+          },
+        },
+      ],
+
+      plotOptions: {
+        column: {
+          borderRadius: 5,
+        },
+      },
+
+      xAxis: {
+        categories: [
+          "Каменный уголь",
+          "Дизельное топливо",
+          "Мазут",
+          "Природный газ",
+          "Древесные пелеты",
+        ],
+      },
+
+      series: [
+        {
+          name: "Текущий перод",
+          data: [60, 78, 76, 80, 20],
+        },
+        {
+          name: "Прошедший период",
+          data: [40, 50, 78, 55, 15],
+        },
+      ],
+    });
+  }
+
+  if (document.querySelector("#graph-3")) {
+    Highcharts.chart("graph-3", {
+      title: {
+        text: "Название графика",
+      },
+
+      subtitle: {
+        text: "Описание",
+      },
+
+      data: {
+        csvURL:
+          "https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv",
+        beforeParse: function (csv) {
+          return csv.replace(/\n\n/g, "\n");
+        },
+      },
+
+      yAxis: [
+        {
+          title: {
+            text: "Заголовк для оси",
+          },
+          labels: {
+            align: "left",
+            x: 3,
+            y: 16,
+            format: "{value:.,0f}",
+          },
+          showFirstLabel: false,
+        },
+        {
+          linkedTo: 0,
+          gridLineWidth: 0,
+          opposite: true,
+          title: {
+            text: null,
+          },
+          labels: {
+            align: "right",
+            x: -3,
+            y: 16,
+            format: "{value:.,0f}",
+          },
+          showFirstLabel: false,
+        },
+      ],
+
+      xAxis: {
+        tickInterval: 7 * 24 * 3600 * 1000,
+        tickWidth: 0,
+        gridLineWidth: 1,
+        labels: {
+          align: "left",
+          x: 3,
+          y: -3,
+        },
+        accessibility: {
+          rangeDescription: "Range: 2010 to 2017",
+        },
+      },
+
+      legend: {
+        enabled: true,
+        align: "left",
+        verticalAlign: "top",
+        borderWidth: 0,
+      },
+
+      tooltip: {
+        shared: true,
+        crosshairs: true,
+      },
+    });
+  }
+
+  if (document.querySelector("#graph-4")) {
+    Highcharts.getJSON(
+      "https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json",
+      (data) => {
+        let detailChart;
+
+        // create the detail chart
+        function createDetail(masterChart) {
+          // prepare the detail chart
+          var detailData = [],
+            detailStart = data[0][0];
+
+          masterChart.series[0].data.forEach((point) => {
+            if (point.x >= detailStart) {
+              detailData.push(point.y);
+            }
+          });
+
+          // create a detail chart referenced by a global variable
+          detailChart = Highcharts.chart("detail-container", {
+            chart: {
+              marginBottom: 120,
+              reflow: false,
+              marginLeft: 50,
+              marginRight: 20,
+              style: {
+                position: "absolute",
+              },
+            },
+            credits: {
+              enabled: false,
+            },
+            title: {
+              text: "Заголовок",
+            },
+            subtitle: {
+              text: "Описание",
+            },
+            xAxis: {
+              type: "datetime",
+            },
+            yAxis: {
+              title: {
+                text: null,
+              },
+              maxZoom: 0.1,
+            },
+            tooltip: {
+              formatter: function () {
+                var point = this.points[0];
+                return (
+                  "<b>" +
+                  point.series.name +
+                  "</b><br/>" +
+                  Highcharts.dateFormat("%A %B %e %Y", this.x) +
+                  ":<br/>" +
+                  "1 USD = " +
+                  Highcharts.numberFormat(point.y, 2) +
+                  " EUR"
+                );
+              },
+              shared: true,
+            },
+            plotOptions: {
+              series: {
+                marker: {
+                  enabled: false,
+                  states: {
+                    hover: {
+                      enabled: true,
+                      radius: 3,
+                    },
+                  },
+                },
+              },
+            },
+            series: [
+              {
+                name: "USD to EUR",
+                pointStart: detailStart,
+                pointInterval: 24 * 3600 * 1000,
+                data: detailData,
+              },
+            ],
+
+            exporting: {
+              enabled: false,
+            },
+          }); // return chart
+        }
+
+        // create the master chart
+        function createMaster() {
+          Highcharts.chart(
+            "master-container",
+            {
+              chart: {
+                reflow: false,
+                borderWidth: 0,
+                backgroundColor: null,
+                marginLeft: 50,
+                marginRight: 20,
+                zoomType: "x",
+                events: {
+                  // listen to the selection event on the master chart to update the
+                  // extremes of the detail chart
+                  selection: function (event) {
+                    var extremesObject = event.xAxis[0],
+                      min = extremesObject.min,
+                      max = extremesObject.max,
+                      detailData = [],
+                      xAxis = this.xAxis[0];
+
+                    // reverse engineer the last part of the data
+                    this.series[0].data.forEach((point) => {
+                      if (point.x > min && point.x < max) {
+                        detailData.push([point.x, point.y]);
+                      }
+                    });
+
+                    // move the plot bands to reflect the new detail span
+                    xAxis.removePlotBand("mask-before");
+                    xAxis.addPlotBand({
+                      id: "mask-before",
+                      from: data[0][0],
+                      to: min,
+                      color: "rgba(0, 0, 0, 0.2)",
+                    });
+
+                    xAxis.removePlotBand("mask-after");
+                    xAxis.addPlotBand({
+                      id: "mask-after",
+                      from: max,
+                      to: data[data.length - 1][0],
+                      color: "rgba(0, 0, 0, 0.2)",
+                    });
+
+                    detailChart.series[0].setData(detailData);
+
+                    return false;
+                  },
+                },
+              },
+              title: {
+                text: null,
+              },
+              accessibility: {
+                enabled: false,
+              },
+              xAxis: {
+                type: "datetime",
+                showLastTickLabel: true,
+                maxZoom: 14 * 24 * 3600000, // fourteen days
+                plotBands: [
+                  {
+                    id: "mask-before",
+                    from: data[0][0],
+                    to: data[data.length - 1][0],
+                    color: "rgba(0, 0, 0, 0.2)",
+                  },
+                ],
+                title: {
+                  text: null,
+                },
+              },
+              yAxis: {
+                gridLineWidth: 0,
+                labels: {
+                  enabled: false,
+                },
+                title: {
+                  text: null,
+                },
+                min: 0.6,
+                showFirstLabel: false,
+              },
+              tooltip: {
+                formatter: function () {
+                  return false;
+                },
+              },
+              legend: {
+                enabled: false,
+              },
+              credits: {
+                enabled: false,
+              },
+              plotOptions: {
+                series: {
+                  fillColor: {
+                    linearGradient: [0, 0, 0, 70],
+                    stops: [
+                      [0, Highcharts.getOptions().colors[0]],
+                      [1, "rgba(255,255,255,0)"],
+                    ],
+                  },
+                  lineWidth: 1,
+                  marker: {
+                    enabled: false,
+                  },
+                  shadow: false,
+                  states: {
+                    hover: {
+                      lineWidth: 1,
+                    },
+                  },
+                  enableMouseTracking: false,
+                },
+              },
+
+              series: [
+                {
+                  type: "area",
+                  name: "USD to EUR",
+                  pointInterval: 24 * 3600 * 1000,
+                  pointStart: data[0][0],
+                  data: data,
+                },
+              ],
+
+              exporting: {
+                enabled: false,
+              },
+            },
+            (masterChart) => {
+              createDetail(masterChart);
+            }
+          ); // return chart instance
+        }
+
+        // make the container smaller and add a second container for the master chart
+        const container = document.getElementById("graph-4");
+        container.style.position = "relative";
+        container.innerHTML +=
+          '<div id="detail-container"></div><div id="master-container"></div>';
+
+        // create master and in its callback, create the detail chart
+        createMaster();
+      }
+    );
+  }
+
+  if (document.querySelector("#graph-5")) {
+    ["mousemove", "touchmove", "touchstart"].forEach(function (eventType) {
+      document
+        .getElementById("graph-5")
+        .addEventListener(eventType, function (e) {
+          var chart, point, i, event;
+
+          for (i = 0; i < Highcharts.charts.length; i = i + 1) {
+            chart = Highcharts.charts[i];
+            // Find coordinates within the chart
+            event = chart.pointer.normalize(e);
+            // Get the hovered point
+            point = chart.series[0].searchPoint(event, true);
+
+            if (point) {
+              point.highlight(e);
+            }
+          }
+        });
+    });
+
+    /**
+     * Override the reset function, we don't need to hide the tooltips and
+     * crosshairs.
+     */
+    Highcharts.Pointer.prototype.reset = function () {
+      return undefined;
+    };
+
+    /**
+     * Highlight a point by showing tooltip, setting hover state and draw crosshair
+     */
+    Highcharts.Point.prototype.highlight = function (event) {
+      event = this.series.chart.pointer.normalize(event);
+      this.onMouseOver(); // Show the hover marker
+      this.series.chart.tooltip.refresh(this); // Show the tooltip
+      this.series.chart.xAxis[0].drawCrosshair(event, this); // Show the crosshair
+    };
+
+    /**
+     * Synchronize zooming through the setExtremes event handler.
+     */
+    function syncExtremes(e) {
+      var thisChart = this.chart;
+
+      if (e.trigger !== "syncExtremes") {
+        // Prevent feedback loop
+        Highcharts.each(Highcharts.charts, function (chart) {
+          if (chart !== thisChart) {
+            if (chart.xAxis[0].setExtremes) {
+              // It is null while updating
+              chart.xAxis[0].setExtremes(e.min, e.max, undefined, false, {
+                trigger: "syncExtremes",
+              });
+            }
+          }
+        });
+      }
+    }
+
+    // Get the data. The contents of the data file can be viewed at
+    Highcharts.ajax({
+      url: "https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/activity.json",
+      dataType: "text",
+      success: function (activity) {
+        activity = JSON.parse(activity);
+        activity.datasets.forEach(function (dataset, i) {
+          // Add X values
+          dataset.data = Highcharts.map(dataset.data, function (val, j) {
+            return [activity.xData[j], val];
+          });
+
+          var chartDiv = document.createElement("div");
+          chartDiv.className = "chart";
+          document.getElementById("graph-5").appendChild(chartDiv);
+
+          Highcharts.chart(chartDiv, {
+            chart: {
+              spacingTop: 20,
+              spacingBottom: 20,
+              height: 300,
+            },
+            title: {
+              text: dataset.name,
+              margin: 0,
+              x: 30,
+            },
+            xAxis: {
+              crosshair: true,
+              events: {
+                setExtremes: syncExtremes,
+              },
+              labels: {
+                format: "{value} km",
+              },
+            },
+            yAxis: {
+              title: {
+                text: null,
+              },
+            },
+            tooltip: {
+              positioner: function () {
+                return {
+                  // right aligned
+                  x: this.chart.chartWidth - this.label.width,
+                  y: 10, // align to title
+                };
+              },
+              borderWidth: 0,
+              backgroundColor: "none",
+              pointFormat: "{point.y}",
+              headerFormat: "",
+              shadow: false,
+              style: {
+                fontSize: "18px",
+              },
+              valueDecimals: dataset.valueDecimals,
+            },
+            series: [
+              {
+                data: dataset.data,
+                name: dataset.name,
+                type: dataset.type,
+                color: Highcharts.getOptions().colors[i],
+                fillOpacity: 0.3,
+                tooltip: {
+                  valueSuffix: " " + dataset.unit,
+                },
+              },
+            ],
+          });
+        });
+      },
+    });
+  }
 });
