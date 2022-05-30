@@ -1200,8 +1200,15 @@ a {
   border-radius: 5px;
   cursor: pointer;
   transition: 1s all;
+  border: none;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Museo Sans Cyrl';
 }
-
+.btn-emission{
+  width: 200px;
+}
 .block__content-btn:hover {
   background: linear-gradient(90deg, #50D3DA 0%, #A9E038 100%);
 }
@@ -1775,6 +1782,7 @@ text-align: start;
   height: 40px;
   font-size: 15px;
   transition: 0.3s all;
+  border: none;
 }
 
 .data-input-btn-active {
@@ -1798,6 +1806,7 @@ text-align: start;
   border-radius: 5px;
   margin-right: 10px;
   font-size: 15px;
+  border: none;
   color: #333333;
 }
 
