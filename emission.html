@@ -168,9 +168,11 @@
         </div>
     </div>
     <div class="modal-container" style="display: none;">
-        <div class="popup_content js-modal-emission-add">
-            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div></a>
-            <div class="popup__title">Create emission sources</div>
+        <div class="modal modal-lg js-modal-emission-add">
+            <div class="modal__close">
+                <button class="closeModal js-modal-close"></button>
+            </div>
+            <div class="modal__title">Create emission sources</div>
             <ul data-tabs>
                 <li><a data-tabby-default href="#Main">Main</a></li>
                 <li><a href="#Operators">Operators</a></li>
@@ -179,24 +181,24 @@
                 <div class="tabs__block">
                     <form id="login" action="" class="form__items js-form">
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="email-input" class="form__title">Installation Name</label>
                             <input placeholder="Installation Name" onchange="test()" id="email-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
                         <div class="form-item">
                             <label for="email-input" class="form__title">Installation Unique ID</label>
                             <input placeholder="Installation Unique ID" onchange="test()" id="email-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
-                        <button type="submit" class="form__btn form-btn-popup">Save</button>
+                        <button type="submit" class="form__btn form-btn-modal">Save</button>
                     </form>
                 </div>
             </div>
             <div id="Operators">
                 <form id="login" action="" class="form__items js-form">
-                    <div class="form-item _select-popup">
-                        <div class="popup__star">*</div>
+                    <div class="form-item _select-modal">
+                        <div class="modal__star">*</div>
                         <div for="input-label" class="select-label">Country</div>
                         <div class="select">
                             <div class="select__header">
@@ -210,27 +212,27 @@
                         </div>
                     </div>
                     <div class="form-item">
-                        <div class="popup__star">*</div>
+                        <div class="modal__star">*</div>
                         <label for="email-input" class="form__title">State/Province/Region</label>
                         <input placeholder="State/Province/Region" onchange="operators()" id="email-input"
-                            class="popup-form-input">
+                            class="modal-form-input">
                     </div>
                     <div class="form-item">
-                        <div class="popup__star">*</div>
+                        <div class="modal__star">*</div>
                         <label for="email-input" class="form__title">City</label>
                         <input placeholder="City" onchange="operators()" id="email-input"
-                            class="popup-form-input operatorsBtn">
+                            class="modal-form-input operatorsBtn">
                     </div>
                     <div class="form-item">
                         <label for="email-input" class="form__title">Post Code</label>
-                        <input placeholder="Post Code" onchange="operators()" id="email-input" class="popup-form-input">
+                        <input placeholder="Post Code" onchange="operators()" id="email-input" class="modal-form-input">
                     </div>
                     <div class="form-item">
                         <label for="email-input" class="form__title">Street, Number</label>
                         <input placeholder="Street, Number" onchange="operators()" id="email-input"
-                            class="popup-form-input">
+                            class="modal-form-input">
                     </div>
-                    <button type="submit" class="form__btn-operators form-btn-popup">Save</button>
+                    <button type="submit" class="form__btn-operators form-btn-modal">Save</button>
                 </form>
             </div>
         </div>

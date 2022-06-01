@@ -170,10 +170,13 @@
             </main>
         </div>
     </div>
+    
     <div class="modal-container" style="display: none;">
-        <div class="popup_content js-modal-oragnization-add">
-            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div></a>
-            <div class="popup__title">Organization Profile</div>
+        <div class="modal modal-sm js-modal-oragnization-add">
+            <div class="modal__close">
+                <button class="closeModal js-modal-close"></button>
+            </div>
+            <div class="modal__title">Organization Profile</div>
             <ul data-tabs>
                 <li><a data-tabby-default href="#Main">Main</a></li>
                 <li><a href="#Operators">Operators</a></li>
@@ -182,13 +185,13 @@
                 <div class="tabs__block">
                     <form id="login" action="" class="form__items js-form">
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="email-input" class="form__title">Organization Name</label>
                             <input placeholder="Organization Name" onchange="test()" id="email-input"
-                                class="popup-form-input popup-input-error js-input">
+                                class="modal-form-input modal-input-error js-input">
                         </div>
-                        <div class="form-item _select-popup">
-                            <div class="popup__star">*</div>
+                        <div class="form-item _select-modal">
+                            <div class="modal__star">*</div>
                             <div for="input-label" class="select-label">Country</div>
                             <div class="select">
                                 <div class="select__header">
@@ -202,40 +205,40 @@
                             </div>
                         </div>
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="password-input" class="form__title">State/Province/Region</label>
                             <input placeholder="State/Province/Region" onchange="test()" id="password-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="password-input" class="form__title">City</label>
                             <input placeholder="City" onchange="test()" id="password-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="password-input" class="form__title">Post Code</label>
                             <input placeholder="Post Code" onchange="test()" id="password-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
                         <div class="form-item">
-                            <div class="popup__star">*</div>
+                            <div class="modal__star">*</div>
                             <label for="password-input" class="form__title">Street, Number</label>
                             <input placeholder="Street, Number" onchange="test()" id="password-input"
-                                class="popup-form-input js-input">
+                                class="modal-form-input js-input">
                         </div>
                         <div class="form-item">
-                            <label for="password-input" class="form__title popup-label">Emissions Trading Permit
+                            <label for="password-input" class="form__title modal-label">Emissions Trading Permit
                                 Number</label>
                             <input placeholder="Emissions Trading Permit Number" onchange="test()" id="password-input"
-                                class="popup-form-input">
+                                class="modal-form-input">
                         </div>
                         <div class="error-message">
                             <div class="error-message-first">Error message</div>
                             <div class="error-message-second">Error message</div>
                         </div>
-                        <button type="submit" class="form__btn form-btn-popup">Save</button>
+                        <button type="submit" class="form__btn form-btn-modal">Save</button>
                     </form>
                 </div>
             </div>
@@ -304,43 +307,43 @@
                 </table>
             </div>
         </div>
-        <div class="popup_content modal js-modal-btn-add">
-            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div></a>
-            <div class="popup__title">Add operator</div>
+        <div class="modal modal js-modal-btn-add">
+            <a href="#" class="modal__close js-modal-close"><div class="closeModal"></div></a>
+            <div class="modal__title">Add operator</div>
             <form id="login" action="" class="form__items js-form">
                 <div class="form-item">
-                    <div class="popup__star">*</div>
+                    <div class="modal__star">*</div>
                     <label for="password-input " class="form__title">First Name</label>
                     <input placeholder="First Name" onchange="add()" id="password-input"
-                        class="popup-form-input popup-input-add js-input-popup-add">
+                        class="modal-form-input modal-input-add js-input-modal-add">
                 </div>
                 <div class="form-item">
-                    <div class="popup__star">*</div>
+                    <div class="modal__star">*</div>
                     <label for="password-input" class="form__title">Email</label>
                     <input placeholder="Email" onchange="add()" id="password-input"
-                        class="popup-form-input js-input-popup-add">
+                        class="modal-form-input js-input-modal-add">
                 </div>
                 <div class="form-item">
-                    <div class="popup__star">*</div>
+                    <div class="modal__star">*</div>
                     <label for="password-input" class="form__title">Post Code</label>
                     <input placeholder="Post Code" onchange="add()" id="password-input"
-                        class="popup-form-input js-input-popup-add">
+                        class="modal-form-input js-input-modal-add">
                 </div>
                 <div class="form-item">
-                    <div class="popup__star">*</div>
+                    <div class="modal__star">*</div>
                     <label for="password-input" class="form__title">Telephone</label>
                     <input placeholder="Telephone" onchange="add()" id="password-input"
-                        class="popup-form-input js-input-popup-add">
+                        class="modal-form-input js-input-modal-add">
                 </div>
                 
-                <button type="submit" onclick="window.location.href = '#popup';"
-                    class="form__btn-add form-btn-popup">Save</button>
+                <button type="submit" onclick="window.location.href = '#modal';"
+                    class="form__btn-add form-btn-modal">Save</button>
             </form>
         </div>
-        <div class="popup_content__delete js-modal-delete">
-            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div>
+        <div class="modal__delete js-modal-delete">
+            <a href="#" class="modal__close js-modal-close"><div class="closeModal"></div>
             </a>
-            <div class="popup__title">Are you sure you want to delete? "STEEL JOINT STOCK COMPANY"</div>
+            <div class="modal__title">Are you sure you want to delete? "STEEL JOINT STOCK COMPANY"</div>
             <button class="delete-btn js-modal-close">Delete</a>
         </div>
     </div>

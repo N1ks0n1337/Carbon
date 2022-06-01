@@ -1368,9 +1368,8 @@ td {
     }
 }
 
-.popup {
+.modal {
     position: fixed;
-    width: 100%;
     height: 100%;
     background-color: rgba(175, 177, 194, 0.5);
     backdrop-filter: blur(4px);
@@ -1378,7 +1377,6 @@ td {
     left: 0;
     z-index: 99999;
     opacity: 0;
-    visibility: hidden;
     transition: all 0.4s ease 0s;
 
     &:target {
@@ -1387,14 +1385,14 @@ td {
         overflow-y: auto;
         overflow-x: hidden;
 
-        .popup__content {
+        .modal__content {
             transform: translate(0px, 0px);
             opacity: 1;
         }
     }
 }
 
-.popup__delete {
+.modal__delete {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -1415,7 +1413,7 @@ td {
     }
 }
 
-.popup__add {
+.modal__add {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -1436,7 +1434,7 @@ td {
     }
 }
 
-.popup_content__delete {
+.modal__delete {
     width: 415px;
     background-color: #fff;
     color: #AFB1C2;
@@ -1452,7 +1450,7 @@ td {
     opacity: 1;
 }
 
-.popup__area {
+.modal__area {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1467,17 +1465,16 @@ td {
     margin-right: 26px;
 }
 
-.popup_body {
+.modal_body {
     display: flex;
     justify-content: center;
     padding: 30px 10px;
 }
 
-.popup_content {
+.modal {
     background-color: #fff;
     color: #AFB1C2;
     font-family: 'Museo Sans Cyrl';
-    width: 415px;
     padding: 20px;
     border-radius: 5px;
     position: relative;
@@ -1488,7 +1485,7 @@ td {
     opacity: 1;
 }
 
-.popup__title {
+.modal__title {
     font-family: 'Museo Sans Cyrl';
     font-style: normal;
     font-weight: 600;
@@ -1497,13 +1494,13 @@ td {
     color: #333333;
 }
 
-.popup__close {
+.modal__close {
     position: absolute;
     right: 10px;
     top: 10px;
 }
 
-.popup-menu {
+.modal-menu {
     margin-top: 25px;
     display: flex;
     width: 140px;
@@ -1516,23 +1513,22 @@ td {
     color: #333333;
 }
 
-.popup-menu-item {
+.modal-menu-item {
     padding: 5px;
     cursor: pointer;
 }
 
-.popup-item-active {
+.modal-item-active {
     background: #9ACC35;
     color: #FFFFFF;
     padding: 11px;
     border-radius: 5px;
 }
 
-.popup-form-input {
+.modal-form-input {
     background: #FFFFFF;
     border: 1px solid #E5E5ED;
     border-radius: 5px;
-    max-width: 375px;
     height: 40px;
     width: 100%;
     margin-top: 9px;
@@ -1551,7 +1547,7 @@ td {
     justify-content: space-between;
 }
 
-.popup-input-error {
+.modal-input-error {
     border: 1px solid #FF5256;
 
     &:placeholder-shown {
@@ -1564,7 +1560,7 @@ td {
     margin-top: 20px;
 }
 
-.popup__star {
+.modal__star {
     color: #FF5256;
     position: absolute;
     right: 0;
@@ -1575,7 +1571,7 @@ td {
     text-align: start;
 }
 
-.form-btn-popup {
+.form-btn-modal {
     margin-top: 20px;
     width: 100%;
 }
@@ -1916,7 +1912,7 @@ table.datainpit-table {
     color: #fff;
 }
 
-._popup-e-select {
+._modal-e-select {
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -1994,7 +1990,7 @@ table.datainpit-table {
     font-size: 12px;
 }
 
-.popup-input-add {
+.modal-input-add {
     width: 375px;
 }
 
@@ -2653,7 +2649,7 @@ form {
 .select {
     margin: 0 auto;
     position: relative;
-    width: 375px;
+    width: inherit;
     z-index: 99999;
 }
 
@@ -3154,7 +3150,7 @@ input[type="search"] {
 }
 
 .icon {
-    margin-bottom: -5px;
+    margin-bottom: 4px;
     padding-left: 10px;
 }
 
@@ -3603,7 +3599,7 @@ input[type="search"] {
 }
 
 @media (max-width: 420px) {
-    .popup_content__delete {
+    .modal__delete {
         width: 100%;
     }
 }
@@ -3656,7 +3652,7 @@ input[type="search"] {
 }
 
 @media (max-width: 380px) {
-    .popup-input-add {
+    .modal-input-add {
         width: 100%;
     }
 }
@@ -3721,8 +3717,9 @@ input[type="search"] {
     height: 10.71px;
 	opacity: 0.2;
 	cursor: pointer;
-  transition: opacity ease 0.3s;
-
+    transition: opacity ease 0.3s;
+    border: none;
+    background-color: transparent;
 	&:hover {
 		opacity: 1;
 	}
