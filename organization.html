@@ -10,7 +10,7 @@
     <link href="/favicon.png" rel="shortcut icon" type="image/png">
     <!-- styles-->
     <link rel="stylesheet" href="assets/css/libs.css">
-    <link rel="stylesheet" href="assets/css/main2.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/iconfont.css">
     <!--js-->
     <script src="assets/js/libs.js" defer></script>
@@ -172,8 +172,7 @@
     </div>
     <div class="modal-container" style="display: none;">
         <div class="popup_content js-modal-oragnization-add">
-            <a href="#" class="popup__close js-modal-close"><img src="./assets/img/organizations/closePopup.png"
-                    alt=""></a>
+            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div></a>
             <div class="popup__title">Organization Profile</div>
             <ul data-tabs>
                 <li><a data-tabby-default href="#Main">Main</a></li>
@@ -306,7 +305,7 @@
             </div>
         </div>
         <div class="popup_content modal js-modal-btn-add">
-            <a href="#" class="popup__close js-modal-close"><img src="./assets/img/organizations/closePopup.png" alt=""></a>
+            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div></a>
             <div class="popup__title">Add operator</div>
             <form id="login" action="" class="form__items js-form">
                 <div class="form-item">
@@ -339,7 +338,8 @@
             </form>
         </div>
         <div class="popup_content__delete js-modal-delete">
-            <a href="#" class="popup__close js-modal-close"><img src="./assets/img/organizations/closePopup.png" alt=""></a>
+            <a href="#" class="popup__close js-modal-close"><div class="closeModal"></div>
+            </a>
             <div class="popup__title">Are you sure you want to delete? "STEEL JOINT STOCK COMPANY"</div>
             <button class="delete-btn js-modal-close">Delete</a>
         </div>
