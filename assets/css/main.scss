@@ -297,6 +297,7 @@ body {
     outline: none;
     cursor: pointer;
     position: relative;
+
     &:focus-visible {
         color: #5ba138;
     }
@@ -532,9 +533,11 @@ strong {
     font-weight: 400;
     margin: 20px 0;
     cursor: pointer;
+
     img {
         margin-right: 13px;
     }
+
     &:hover {
         color: #333333;
         transition: 0.6s ease;
@@ -608,7 +611,8 @@ a {
     display: flex;
     margin-right: 25px;
     position: relative;
-    &::before{
+
+    &::before {
         content: "";
         position: absolute;
         right: -10px;
@@ -1728,13 +1732,15 @@ td {
     display: inline-block;
     padding: 3px;
 
-    &.active{
+    &.active {
         border-color: #333333;
     }
-    &.disabled{
+
+    &.disabled {
         border-color: #D0D2DB;
     }
-    &:hover{
+
+    &:hover {
         border: 2px solid #9ACC35;
         border-width: 0 3px 3px 0;
     }
@@ -1857,7 +1863,8 @@ table.datainpit-table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    &:nth-child(1){
+
+    &:nth-child(1) {
         position: relative;
     }
 }
@@ -2296,40 +2303,6 @@ input[type=search] {
     width: 9px;
     height: 9px;
     cursor: pointer;
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 21px;
-        left: 10px;
-        width: 13px;
-        height: 2px;
-        background: #AFB1C2;
-        webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: 21px;
-        left: 10px;
-        width: 13px;
-        height: 2px;
-        background: #AFB1C2;
-        webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-
-    &:hover {
-        &::before {
-            background: #9ACC35;
-        }
-
-        &::after {
-            background: #9ACC35;
-        }
-    }
 }
 
 .wrapper-login {
@@ -3244,8 +3217,8 @@ input[type="search"] {
 
 .modal__close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: -50px;
 }
 
 .modal__title {
@@ -3280,7 +3253,7 @@ input[type="search"] {
     margin-top: 30px;
 }
 
-.delete-modal{
+.delete-modal {
     padding: 0;
     border: none;
     font: inherit;
@@ -3662,7 +3635,8 @@ input[type="search"] {
         margin-right: 1px;
     }
 }
-.filter-link{
+
+.filter-link {
     font-family: 'Museo Sans Cyrl';
     font-style: normal;
     font-weight: 400;
@@ -3673,7 +3647,8 @@ input[type="search"] {
     color: #333333;
     background: #FFFFFF;
     position: relative;
-    &::after{
+
+    &::after {
         content: "";
         position: absolute;
         right: -10px;
@@ -3690,56 +3665,39 @@ input[type="search"] {
         transition: .5s;
         pointer-events: none;
     }
-    @media(max-width: 1251px){
-        &::after{
+
+    @media(max-width: 1251px) {
+        &::after {
             content: "";
-        }  
+        }
     }
 }
 
-.emission-search{
+.emission-search {
     max-width: 410px;
     width: 100%;
     margin: 20px 0 20px 0;
 }
 
-.modal-lg{
+.modal-lg {
     width: 1100px;
 }
-.modal-sm{
+
+.modal-sm {
     width: 420px;
 }
-.closeModal {
-	position: absolute;
-	top: 10px;
-	right: 10px;
+
+
+.icn_close {
     width: 11.12px;
     height: 10.71px;
-	opacity: 0.2;
-	cursor: pointer;
-    transition: opacity ease 0.3s;
+}
+.close{
     border: none;
     background-color: transparent;
-	&:hover {
-		opacity: 1;
-	}
-}
-
-.closeModal::before,
-.closeModal::after {
-	content: '';
-	position: absolute;
-	top: 0px;
-	display: block;
-    width: 17px;
-    height: 3px;
-	background: #000;
-}
-
-.closeModal::before {
-	transform: rotate(45deg);
-}
-
-.closeModal::after {
-	transform: rotate(-45deg);
+    cursor: pointer;
+    opacity: 0.2;
+    &:hover{
+        opacity: 1;
+    }
 }

@@ -2659,40 +2659,6 @@ input[type=search]:active {
   cursor: pointer;
 }
 
-.close:before {
-  content: "";
-  position: absolute;
-  top: 21px;
-  left: 10px;
-  width: 13px;
-  height: 2px;
-  background: #AFB1C2;
-  webkit-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.close:after {
-  content: "";
-  position: absolute;
-  top: 21px;
-  left: 10px;
-  width: 13px;
-  height: 2px;
-  background: #AFB1C2;
-  webkit-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.close:hover::before {
-  background: #9ACC35;
-}
-
-.close:hover::after {
-  background: #9ACC35;
-}
-
 .wrapper-login {
   font-family: 'Museo Sans Cyrl';
   display: -webkit-box;
@@ -3643,8 +3609,8 @@ input[type="search"]::-webkit-search-decoration {
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: -50px;
 }
 
 .modal__title {
@@ -4139,42 +4105,19 @@ input[type="search"]::-webkit-search-decoration {
   width: 420px;
 }
 
-.closeModal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.icn_close {
   width: 11.12px;
   height: 10.71px;
-  opacity: 0.2;
-  cursor: pointer;
-  -webkit-transition: opacity ease 0.3s;
-  transition: opacity ease 0.3s;
+}
+
+.close {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  opacity: 0.2;
 }
 
-.closeModal:hover {
+.close:hover {
   opacity: 1;
-}
-
-.closeModal::before,
-.closeModal::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  display: block;
-  width: 17px;
-  height: 3px;
-  background: #000;
-}
-
-.closeModal::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.closeModal::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
 }
 /*# sourceMappingURL=main.css.map */
