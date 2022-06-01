@@ -93,14 +93,28 @@
                         <div class="user-container">
                             <div class="profile">
                                 <div class="profile-info">
-                                    <a href="./login.html"><img src="./assets/img/dashboard/icon/profile.png" alt=""></a>
+                                    <a href="https://dev.carbontracker.pro/profile"><img src="./assets/img/person.svg" alt=""></a>
                                 </div>
                                 <div class="profile-descr">
                                     <div class="profile-descr-role">
                                         Administrator
                                     </div>
                                     <div class="profile-descr-name">
-                                        Eastwood C.S.
+                                        <div class="dropdown dropdown_user js-dropdown">
+                                            <button class="dropdown__label">
+                                                <div class="dropdown__txt">Eastwood C. S.</div>
+                                            </button>
+                                            <div class="dropdown__dropdown"> 
+                                                <ul class="dropdown__list">
+                                                <form action="https://dev.carbontracker.pro/logout" method="post">
+                                                <input type="hidden" name="_csrf" value="SR_ep77-kbUed3DyYOIguZgWeADbljV_DCIAGYshO1EYUpjX8c789mwxQbdZt07D628KWpjCWzI7REx_w1lifA==">
+                                                    <li class="dropdown__itm"> 
+                                                        <button type="submit" class="dropdown__btn">Logout</button>
+                                                    </li>
+                                                    </form>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
